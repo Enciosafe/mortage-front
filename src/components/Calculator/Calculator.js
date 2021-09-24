@@ -1,7 +1,8 @@
 import React, {Component} from 'react';
-import {Input} from "@material-ui/core";
+import {Button, Input} from "@material-ui/core";
+import s from './Calculator.module.css'
 
-class Calculator extends Component {
+export default class Calculator extends Component {
 
     state = {
         selectedBank: '',
@@ -63,16 +64,14 @@ class Calculator extends Component {
         return (
             <div>
                 <form onSubmit={this.send}>
-                    <Input onChange={this.handleChange} name='bank' type='text' value={selectedBank} vplaceholder='input bank name' />
-                    <Input onChange={this.handleChange} name='loan' type="number" value={initialLoan} placeholder='Initial loan'/>
-                    <Input onChange={this.handleChange} name='payment' type="number" value={downPayment} placeholder='Down payment'/>
-                    <Input type='submit' value='send'/>
+                    <p><Input className={s.item} onChange={this.handleChange} name='bank' type='text' value={selectedBank.toLowerCase()} placeholder='bank name'/></p>
+                    <p><Input className={s.item} onChange={this.handleChange} name='loan' type="number" value={initialLoan} placeholder='initial loan'/></p>
+                    <p><Input className={s.item} onChange={this.handleChange} name='payment' type="number" value={downPayment} placeholder='down payment'/></p>
+                    <p><Button className={s.item} type='submit'>calculate</Button></p>
                 </form>
-                {this.state.calculationResult && <h2>MONTHLY PAYMENT: {this.state.calculationResult} hrn.</h2>}
+                {this.state.calculationResult && <p>MONTHLY PAYMENT: <p className={s.payment}>{this.state.calculationResult} hrn.</p></p>}
             </div>
         );
     }
 
 };
-
-export default Calculator;

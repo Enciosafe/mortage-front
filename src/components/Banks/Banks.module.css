@@ -1,0 +1,53 @@
+.container {
+    display: flex;
+    justify-content: center;
+}
+
+.item {
+    width: 800px;
+    margin: 10px;
+    padding: 20px;
+}
+
+.item:first-child {
+    width: 300px;
+    height: 500px;
+    text-align: center;
+
+}
+
+.item:last-child {
+    margin-top: -20px;
+    padding: 0;
+}
+
+.card {
+    border: 1px solid mediumseagreen;
+    text-align: center;
+    margin: 15px;
+    background-color: lightgray;
+    width: 300px;
+}
+
+.cardTitle {
+    border-bottom: 1px solid mediumseagreen;
+    font-family: 'Stick No Bills', sans-serif;
+    text-align: center;
+    background-color: mediumseagreen;
+}
+
+.cardBtn {
+    margin-bottom: 5px;
+    border-top: 1px solid mediumseagreen;
+    background-color: mediumseagreen;
+}
+.btn {
+    font-family: 'Stick No Bills', sans-serif;
+    font-size: 16px;
+    font-weight: bold;
+}
+
+.cardContainer {
+    display: flex;
+    flex-wrap: wrap;
+}

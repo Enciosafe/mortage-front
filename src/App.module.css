@@ -5,3 +5,18 @@ body {
     background-size: contain;
     height: 800px;
 }
+
+a {
+    text-decoration: none;
+    color: black;
+}
+
+li {
+    list-style-type: none;
+}
+
+.title {
+    text-align: center;
+    font-family: 'Stick No Bills', sans-serif;
+    font-size: 45px;
+}

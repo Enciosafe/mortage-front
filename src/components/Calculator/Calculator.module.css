@@ -1,0 +1,9 @@
+
+
+.payment {
+    border: 1px solid mediumseagreen;
+    border-radius: 5px;
+    padding: 10px;
+    font-family: 'Stick No Bills', sans-serif;
+    font-size: 50px;
+}

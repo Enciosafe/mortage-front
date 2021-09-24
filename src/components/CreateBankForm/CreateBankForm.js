@@ -1,6 +1,7 @@
 import React, {Component} from 'react';
-import {Button, TextField} from "@material-ui/core";
+import {Button, Card, TextField} from "@material-ui/core";
 import {addBank} from "../../services/bankApi";
+import s from './CreateBankForm.module.css'
 
 class CreateBankForm extends Component {
 
@@ -49,7 +50,6 @@ class CreateBankForm extends Component {
     addBank = (e) => {
         e.preventDefault()
         addBank(this.state)
-        console.log(this.state)
         this.cleanState()
     }
 
@@ -58,7 +58,7 @@ class CreateBankForm extends Component {
     render () {
        const {name, interestRate, maxLoan, minDownPayment, loanTerm } = this.state
         return (
-            <div>
+            <div className={s.card}>
                 <form onSubmit={this.addBank}>
                     <div>
                         <TextField
@@ -66,7 +66,7 @@ class CreateBankForm extends Component {
                             label="bank name"
                             type="text"
                             name="bankName"
-                            value={name}
+                            value={name.toLowerCase()}
                             pattern="^[a-zA-Zа-яА-Я]+(([' -][a-zA-Zа-яА-Я ])?[a-zA-Zа-яА-Я]*)*$"
                             onChange={this.handleChange}
                             required
@@ -119,7 +119,7 @@ class CreateBankForm extends Component {
                     </div>
 
                     <div>
-                        <Button type="submit">Add bank</Button>
+                        <Button className={s.btn} type="submit">Add bank</Button>
                     </div>
                 </form>
             </div>

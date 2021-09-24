@@ -23,3 +23,9 @@ export const delBank = (id) => {
         .then(response => console.log(`BANK was deleted`))
 }
 
+export const updateBank = (id, body) => {
+    return axios
+        .patch(`${BASE_URL}api/banks/${id}`, body)
+        .then(response => console.log('BANK was updated'))
+}
+
